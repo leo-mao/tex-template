@@ -1,0 +1,123 @@
+% Erzeugt von B.Campen
+% 01.03.2018
+% https://it-logen.de:3000/Berend/LaTeX-Vorlage
+
+% Einstellen der Dokumentenklasse (möglich: book, report, article, dinbrief, beamer, scrbook, scrreprt, scrartcl)
+% Einstellen der Dokumentoptionen (möglich: 11pt, twocolumn, oneside, titlepage, landscape, a4paper)
+\documentclass[12pt,a4paper]{article}
+    
+% Sprach- und Kodierungseinstellungen
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+% Literaturverzeichnis
+\usepackage{cite}
+
+% Stil des Literaturverzeichnisses festlegen (möglich: plain, abbrv, alpha, unsrt, natbib)
+\bibliographystyle{plain}
+
+% Grafikpakete für Bilder und Vektorgraphiken
+\usepackage{graphicx}
+\usepackage{float}
+
+% Weitere Pakete
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Für Kopfzeile
+\usepackage{fancyhdr}
+
+% Für Tabellen
+\usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
+
+% Dokumentformatierung (möglich: plain, empty, headings, myheadings)
+\pagestyle{plain}
+
+% Seitenzahlenstil (möglich: arabic, roman, Roman, alph, Alph)
+\pagenumbering{arabic}
+
+% Hyperlink Package
+\usepackage{hyperref}
+
+% Für URLs
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+
+% Für lipsum, to generate lorem paragraph
+\usepackage{lipsum}
+
+% To generate Blindtext
+\usepackage{blindtext}
+
+% Für inline codes
+\usepackage{listings}
+\lstset{
+	language=bash,
+	basicstyle=\ttfamily
+}
+
+% Für unterschiedliche Enumerate Stile 
+\usepackage{enumitem}
+\newenvironment{exercise}
+	{\begin{enumerate}[label=\bfseries\alph*).]\bfseries}
+{\end{enumerate}}
+\newenvironment{answer}{\par\normalfont}{}
+
+% Farbe der Hyperlinks anpassen
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={blue},
+    urlcolor={black}
+}
+
+%hologo for Latex Symbol
+\usepackage{hologo}
+
+
+% Fancy Pagestyle ändern
+\fancypagestyle{plain}{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Fußzeile
+\fancyfoot{}		% Fußzeile leeren
+\lfoot{Lorem left foot}
+\rfoot{Lorem right foot}
+
+
+\title{	
+\textbf{Praktikum Aufgabe\\
+%		Übung  \\
+	}
+%		Fach\\
+%		SS20XX \\
+		Hochschule Emden/Leer\\
+		\hologo{LaTeX}}
+\author{Yang Mao} 
+\date{\today}
+
+             
+% Start der Inhaltsumgebung
+\begin{document}
+    % Titel anzeigen
+    \maketitle
+    \newpage
+    
+    \tableofcontents
+    \newpage
+	% Dokumentinformationen
+    \section{Section Q\&A}
+    	\begin{exercise}
+		\item \lipsum[5]
+			\begin{answer}
+			\lipsum[2]
+			\end{answer}
+    	\end{exercise}
+    \section{Code}
+	\begin{lstlisting}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+	\end{lstlisting}
+\end{document}
