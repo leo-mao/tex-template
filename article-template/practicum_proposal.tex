@@ -1,0 +1,221 @@
+% Erzeugt von B.Campen
+% 01.03.2018
+% https://it-logen.de:3000/Berend/LaTeX-Vorlage
+
+% Einstellen der Dokumentenklasse (möglich: book, report, article, dinbrief, beamer, scrbook, scrreprt, scrartcl)
+% Einstellen der Dokumentoptionen (möglich: 11pt, twocolumn, oneside, titlepage, landscape, a4paper)
+\documentclass[12pt,a4paper]{article}
+
+% Sprach- und Kodierungseinstellungen
+\usepackage[utf8]{inputenc}
+%\usepackage[ngerman]{babel}
+%\usepackage{xeCJK}
+%\setCJKmainfont{WenQuanYi Zen Hei}
+% Literaturverzeichnis
+\usepackage{cite}
+
+% Stil des Literaturverzeichnisses festlegen (möglich: plain, abbrv, alpha, unsrt, natbib)
+\bibliographystyle{plain}
+
+% Grafikpakete für Bilder und Vektorgraphiken
+\usepackage{graphicx}
+\usepackage{float}
+
+% Weitere Pakete
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Für Kopfzeile
+\usepackage{fancyhdr}
+
+% Für Tabellen
+\usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
+
+% Dokumentformatierung (möglich: plain, empty, headings, myheadings)
+\pagestyle{plain}
+
+% Seitenzahlenstil (möglich: arabic, roman, Roman, alph, Alph)
+\pagenumbering{arabic}
+
+% Hyperlink Package
+\usepackage{hyperref}
+
+% Für URLs
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+
+% Für lipsum, to generate lorem paragraph
+\usepackage{lipsum}
+
+% To generate Blindtext
+\usepackage{blindtext}
+
+% Für inline codes
+\usepackage{listings}
+\lstset{
+	language=bash,
+	basicstyle=\ttfamily
+}
+
+% Für unterschiedliche Enumerate Stile 
+\usepackage{enumitem}
+\newenvironment{exercise}
+{\begin{enumerate}[label=\bfseries\alph*).]\bfseries}
+	{\end{enumerate}}
+\newenvironment{answer}{\par\normalfont}{}
+% Define a space
+\def\sig#1{\vbox{\hsize=6cm\kern2cm\hrule\kern1ex\hbox to \hsize{\strut\hfil #1 \hfil}}}
+% Define the signatures
+\newcommand\signatures[5]{
+
+\hbox to \hsize{\quad\sig{#2}\hfil\hfil\sig{#3}\quad}
+\hbox to \hsize{\hfil\sig{#4}\hfil}
+\vspace{3cm}
+\hbox to \hsize{\hfil \date{#5} \space #1\hfil}
+}
+% Farbe der Hyperlinks anpassen
+\hypersetup{
+	colorlinks,
+	linkcolor={black},
+	citecolor={blue},
+	urlcolor={black}
+}
+
+%hologo for Latex Symbol
+%\usepackage{hologo}
+
+
+% Fancy Pagestyle ändern
+\fancypagestyle{plain}{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Fußzeile
+\fancyfoot{}		% Fußzeile leeren
+\lfoot{Practicum Proposal}
+\rfoot{XXXXXXXo}
+
+
+\title{	
+	\textbf{Practicum Proposal\\
+	}
+	%		Fach\\
+	%		SS20XX \\
+	University of Applied Science \\Emden/Leer
+%	\hologo{LaTeX}
+}
+\author{XXXXXXXo}
+
+\date{XXXXXXXyXXXXXXX19}
+
+
+% Start der Inhaltsumgebung
+\begin{document}
+	% Titel anzeigen
+	\maketitle
+	\newpage
+	\tableofcontents
+	\newpage
+	% Dokumentinformationen
+	\section{Practicum Description}
+	\subsection{Student Information}
+	\text{Student Name:} X
+XXXXXXo\\
+	\text{Enrollment Number:} X
+XXXXXX\\
+	\text{Telephone:} +86 X
+XXXXXXXXXX\\
+	\text{Email:} \href{mailto:X
+XXXXXXo@stud.hs-emden-leer.de}{X
+XXXXXXo@stud.hs-emden-leer.de}\\
+	\subsection{Host Organization Information}
+	\text{Organization Name: Sunny Optical Research Institute Co.,Ltd.} \\
+	\text{Organization Address:} \href{https://j.map.baidu.com/-5172}{22F, Building A, DIC, No.1190, Bin'an Road, Binjiang District, Hangzhou, Zhejiang, P. R. China, 310052}\\
+	\text{Organizaiton Phone:} +86-0571-81181281-8065 \\
+	\text{Supervisor Name:} Jun Sun\\
+	\text{Supervisor Email:} \href{mailto:sunjun@sunnyoptical.com}{sunjun@sunnyoptical.com}\\
+	\subsection{Timeline for Practicum}
+	\text{From November 13, 2018 to February 12, 2019 with 40 hours each week}
+	\subsection{Job Description}
+	\subsubsection{Position and Responsibilities}
+	Position: Algorithm Intern \\
+	Responsibilities: implement and deploy the distribute neural network models based on existed neural network models
+	\subsubsection{Preliminary Work Plan}
+	\begin{tabular}{l|r}
+		\hline
+		Learn the basic concepts about TensorFlow and build the development \\ environment for TensorFlow, Keras and OpenCV under Linux & 1 Week \\
+		\hline
+		Implement the image classification with MNIST Database and \\ simulate distributed training on a single server using TensorFlow & 1 Week \\
+		\hline
+		Deploy the distributed code of image classification on local LAN to accelerate\\ training  and visualize  the training by using Tensorboard & 1 Week \\
+		\hline
+		Prepare and give a presentation of key  points about \\distributed TensorFlow to members of algorithm group in the company & 1 Week \\
+		\hline
+		Investigate other distributed  frameworks of deep learning(like PyTorch and \\Keras). Utilize one of them to implement the image classification above. \\Evaluate and summarize the principle and performance of distributed\\training of the investigated frameworks & 1 Week\\
+		\hline
+		Investigate the YOLO network and build a distributed YOLO-alike neural \\ network model using any of above frameworks. Transform the images and \\labels from COCO dataset into the required format for training of the self-built \\ YOLO model & 2 Weeks\\
+		\hline
+		Deploy the distributed code for YOLO model on local LAN to accelerate \\training and visualize the training process if possible. & 2 Weeks\\
+		\hline
+		Test and evaluate the accuracy and  performance of the self-built model and\\ compare them with the best existing trained results online. Retraining the\\ self-built model to obtain state of the art result. & 3 Weeks\\
+		\hline 
+		\textbf{Total} & 12 Weeks
+	\end{tabular}
+	%	\begin{itemize}
+	%%		\item 学习在Linux下配置Tensorflow、Keras以及OpenCV的开发环境,学习TensorFlow的基本使用方式 --- 1 week
+	%%		\item 使用TensorFlow实现Mnist手写字体识别的训练，并在单机环境下模拟分布式训练（包括同步和异步的训练） --- 1 week
+	%%		\item 把Mnist手写字体识别项目部署到局域网内的多台服务器上进行分布式训练并用Tensorboard将训练过程可视化展现 --- 1 week
+	%%		\item 学习理解分布式TensorFlow的底层原理并且面向算法组组内成员演讲 --- 1 week
+	%%		\item 学习调研总结其他框架的分布式实现（如Pytorch,Keras）并实现其中一种 --- 1 week 
+	%%		\item 掌握YOLO神经网络的基本概念，搭建自己的仿YOLO的神经网络训练框架，将COCO数据库中的图片转换成神经网络的输入格式 --- 2 weeks
+	%%		\item 把该网络部署到局域网内的多台机器上进行分布式训练 --- 2 weeks
+	%%		\item 测试训练的结果和开源网络中与预训练的版本进行对比评价及优化 --- 3 weeks\\ --- 合计 11/12 周 ---
+	%
+	%
+	%
+	%	
+	%
+	%	\end{itemize}
+
+
+	
+	\subsection{Practicum Referential Guideline}
+	\begin{enumerate}
+		\item \textit{Merkblatt zu Praxisphase, Bachelor-Arbeit und Kolloquium für Studierende und Prüfer/innen }
+		\item \textit{Besonderer Teil (B) der Prüfungsordnung
+für die Präsenz-Bachelorstudiengänge
+Elektrotechnik,
+Elektrotechnik im Praxisverbund
+		Informatik
+Medientechnik
+an der Hochschule Emden/Leer
+im Fachbereich Technik
+}
+		\item \textit{Allgemeiner Teil (Teil A) der Prüfungsordnung für die Präsenz-Bachelorstudiengänge (BPO) der Hochschule Emden/Leer}
+		
+	\end{enumerate}
+	\vfill
+	\section{Agreement}
+	\vspace{3cm}
+	\signatures{iX
+XXXXXXou}{X
+XXXXXXo}{XXXXXXX}{\footnotesize {XXXXXXXXXXXXXXXXXXXrch Institute Co.,Ltd.}}{XXXXXXXXXXXXX2019}
+%	\hfill 
+%	
+%	\textit{Student :} \textbf{XXXXXXXo}  \hfill {\tiny \textit{Student Signature}}   \\
+%	\vspace{3cm}
+%	\null \hfill {\tiny \date{\today}}
+%
+%
+%
+%	\textit{XXXXXXXXXXXXXXXXXXXXXXXXXsor :} \textbf{XXXXXXX} \hfill	{\tiny \textit{Supervisor Signature}}\\ \null 
+%	\vspace{3cm}
+%	\null \hfill {\tiny \date{\today}}
+%
+%	\textit{Host Organization :} {\small \textbf{XXXXXXXXXXXXXXXXXXXXXXXXXstitute Co.,Ltd.}} \\ \null\hfill {\tiny \textit{Organization Seal} } \\ 
+%	\null \hfill {\tiny \date{\today}}
+
+	
+\end{document}
