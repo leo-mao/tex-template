@@ -1,0 +1,64 @@
+% preamble
+\documentclass[12pt]{report}
+% twoside for print version
+%\documentclass[12pt,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+%set to a4paper by using geometry
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+
+\title{
+{Laptops Detection In office environment using Deep Learning Approaches}\\
+{\large Hochschule Emden/Leer}\\
+{\large Sunny Optical Research Institute CO.,Ltd.}\\
+{\large Supervised by Dr. Prof. Carsten Koch}\\
+{\large Supervised by Dr. Jun Sun}}
+
+
+\author{Yang Mao}
+\date{06/19/2019}
+\begin{document}
+%\maketitle
+\input{chapters/title}
+
+%\chapter*{Abstract}
+%Abstarct goes here
+\input{chapters/abstract}
+
+\chapter*{Dedication}
+To CCP, CCTV
+
+\chapter*{Declaration}
+I declare that...
+\chapter*{Acknowledgements}
+I want to thank CCP, CCTV again
+\tableofcontents
+
+\chapter{Introduction}
+\input{chapters/introduction}
+fdsfdsf\nocite{*latexcompanion}
+
+
+\chapter{Chapter Two Title}
+\input{chapters/chapter02}
+
+\chapter{Chapter Three Title}
+\input{chapters/chapter03}
+
+\chapter{Chapter Four Title}
+\input{chapters/chapter04}
+
+\chapter{Conclusion}
+\input{chapters/conclusion}
+
+\appendix
+\chapter{Appendix Title}
+\input{chapters/appendix}
+
+\end{document}
